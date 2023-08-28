@@ -1,6 +1,6 @@
 /* eslint-disable import/extensions */
 import { Sequelize, DataTypes } from 'sequelize'
-import dbConfig from '../../config/dbConfig.js'
+import dbConfig from '../../../../config/dbConfig.js'
 import productSchema from './productModel.js'
 
 const sequelize = new Sequelize(
