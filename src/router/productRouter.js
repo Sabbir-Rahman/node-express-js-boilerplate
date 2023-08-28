@@ -1,5 +1,6 @@
-import { Router } from "express";
-import productController from "../controller/productController.js";
+/* eslint-disable import/extensions */
+import { Router } from 'express'
+import productController from '../controller/productController.js'
 
 const router = Router()
 
