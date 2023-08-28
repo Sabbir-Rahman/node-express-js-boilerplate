@@ -1,13 +1,25 @@
 import express from 'express'
+import cors from 'cors'
+
+import router from './router/productRouter.js'
 
 const app = express()
+const PORT = process.env.PORT || 8080
 
-const PORT = 5000
+var corsConfig = {
+    origin: 'https://localhost:8081'
+}
 
-app.get('/', (req, res) => {
-    res.send('Hello')
+app.use(cors(corsConfig))
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
+app.use('/api/products/',router)
+
+app.get('/', (req,res)=> {
+    res.json({ message: 'Hello'})
 })
 
 app.listen(PORT, ()=> {
-    console.log(`Server listening on ${PORT}`)
+    console.log(`Server is running on port ${PORT}`)
 })
