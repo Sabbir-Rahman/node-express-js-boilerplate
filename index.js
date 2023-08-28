@@ -3,6 +3,7 @@ import express from 'express'
 import cors from 'cors'
 
 import v1Router from './src/api/v1/v1Router.js'
+import logger from './logger/defaultLogger.js'
 
 const app = express()
 const PORT = process.env.PORT || 8080
@@ -22,5 +23,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`)
+  logger.info(`Server running on ${PORT}`)
 })
